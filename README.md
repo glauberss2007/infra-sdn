@@ -2,6 +2,8 @@
 
 Neste repositorio iremos trabalhar em projetos de redes usando conceitos e ferramentas como SDN, OpenFlow, Mininet, POX Controller, criação de aplicações SDN, ovs-ofctl, topologias customizadas e Wireshark.
 
+![image](https://github.com/user-attachments/assets/389c945c-8b91-40be-887e-2fb53cdd03d0)
+
 Redes Definidas por Software (SDN) representam uma arquitetura inovadora que separa o plano de controle do plano de dados, permitindo um gerenciamento centralizado e programável da rede. O protocolo OpenFlow é fundamental para essa arquitetura, possibilitando que o controlador SDN gerencie diretamente os dispositivos de rede. Ferramentas como Mininet facilitam a criação de redes virtuais para testes e desenvolvimento, enquanto o controlador POX oferece uma plataforma acessível para a criação de aplicações SDN em Python. O utilitário ovs-ofctl permite a manipulação das tabelas de fluxo do Open vSwitch, essencial para depuração e configuração. A capacidade de criar topologias customizadas no Mininet permite simular cenários de rede específicos, e o Wireshark é uma ferramenta valiosa para analisar o tráfego de rede e garantir o correto funcionamento das aplicações SDN.
 
 ## Redes SDN vs Tradicioanis
