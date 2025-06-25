@@ -266,8 +266,14 @@ FlowMod message:
 
 ## Projecto exemplo
 
+Execute o script chamado "install_vb_vagrant.sh" presente na pasta vagrant deste projeto para instalar o Virtual box 7 + vagrant em sua maquina ubuntu ou debian. Para executar use os comando abaixo:
 
+```bash
+chmod +x install_vagrant.sh
+./install_vagrant.sh
 
+```
 
+Apos instalação, acesse a pasta vagrant e execute o comando ``vagrant up``, o qual ira subir uma VM conforme descrito no arquivo vagrantfile da pasta corrente. Para acessar a maquina criada utilize o ``vagrant ssh``, para desligar ``vagrant halt`` e para remover ``vagrant destroy``.
 
 
