@@ -57,6 +57,8 @@ Muitos dispositivos modernos têm uma arquitetura que separa suas funções em *
 
 O esquema seria assim:
 
+![alt text](image.png)
+
 1. Configurações básicas no Router (CLI):
 
 Ao acessar a CLI do roteador, você executa esses comandos:
