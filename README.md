@@ -264,9 +264,9 @@ FlowMod message:
 - Command: add (para criar uma nova regra)
 ```
 
-## Projecto exemplo
+## Projecto exemplo com mininet
 
-Execute o script chamado "install_vb_vagrant.sh" presente na pasta vagrant deste projeto para instalar o Virtual box 7 + vagrant em sua maquina ubuntu ou debian. Para executar use os comando abaixo:
+1. Execute o script chamado "install_vb_vagrant.sh" presente na pasta vagrant deste projeto para instalar o Virtual box 7 + vagrant em sua maquina ubuntu ou debian. Para executar use os comando abaixo:
 
 ```bash
 chmod +x install_vagrant.sh
@@ -277,3 +277,48 @@ chmod +x install_vagrant.sh
 Apos instalação, acesse a pasta vagrant e execute o comando ``vagrant up``, o qual ira subir uma VM conforme descrito no arquivo vagrantfile da pasta corrente. Para acessar a maquina criada utilize o ``vagrant ssh``, para desligar ``vagrant halt`` e para remover ``vagrant destroy``.
 
 
+2. Realize o downloa da VM do mininet em https://github.com/mininet/mininet/releases e importe a mesma para o virtual box (File -> Import appliance).
+Ao excuat a VMutilize os login: mininet e senha mininet:
+
+sudo -s
+
+mn --test pingpair
+
+mn 
+pingall
+
+verifique as pastas ls- l e acesse a pasta do controlador  pox
+
+Confirme que o controlador esta funcionanado
+./pox.py pox.forwarding.hub
+
+Criando diferentes topologias utilizando o mininet
+
+### Minimal
+
+![alt text](image-1.png)
+
+### Single
+
+![alt text](image-2.png)
+
+### Reversed
+
+![alt text](image-3.png)
+
+### Linear
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+### Tree
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+## Referencias
+- [Comandos mininet](https://mininet.org/walkthrough/)
+
+## Criando aplicações SDN sem utilizar Controlers
