@@ -339,3 +339,21 @@ Utilize o comando ``mn --topo=tree,3`` para criar esta infraestrutura no mininet
 - [Comandos mininet](https://mininet.org/walkthrough/)
 
 ## Criando aplicações SDN sem utilizar Controlers
+
+Iremos aborda a criação de aplicações de Redes Definidas por Software (SDN) sem a necessidade de um controlador centralizado. Isso pode ser útil em cenários onde a simplicidade e a autonomia são mais importantes do que o controle centralizado. 
+
+### Criando Aplicações SDN Com ovs-ofctl
+
+Sera criado aplicações SDN usando a ferramenta de linha de comando ovs-ofctl, que interage diretamente com o Open vSwitch (OVS).
+
+### Criando Aplicação de Hub Sem Usar Controlador
+
+Iremos criar uma aplicação de hub (um dispositivo de rede básico que retransmite todo o tráfego para todos os dispositivos conectados) usando SDN, sem a necessidade de um controlador. 
+
+### Criando Aplicação de Switch Sem Usar Controlador
+
+Iremos criar uma aplicação de switch (um dispositivo de rede mais inteligente que encaminha o tráfego apenas para o dispositivo de destino) usando SDN, novamente sem um controlador. 
+
+### Criando Aplicação de Firewall Sem Usar Controlador
+
+Iremos criar umaa aplicação de firewall usando SDN, sem a necessidade de um controlador. Isso permite implementar políticas de segurança de rede de forma distribuída. 
