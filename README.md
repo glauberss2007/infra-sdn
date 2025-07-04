@@ -278,45 +278,62 @@ Apos instalação, acesse a pasta vagrant e execute o comando ``vagrant up``, o 
 
 
 2. Realize o downloa da VM do mininet em https://github.com/mininet/mininet/releases e importe a mesma para o virtual box (File -> Import appliance).
-Ao excuat a VMutilize os login: mininet e senha mininet:
 
-sudo -s
+Ao excutar a VM utilize os login: mininet e senha mininet:
 
-mn --test pingpair
+Realize um teste inicial executando o script e comando em 01-iniciar_sdn.sh dentro da pasta mininet.
 
-mn 
-pingall
 
-verifique as pastas ls- l e acesse a pasta do controlador  pox
-
-Confirme que o controlador esta funcionanado
-./pox.py pox.forwarding.hub
-
-Criando diferentes topologias utilizando o mininet
+Criando diferentes topologias utilizando o mininet:
 
 ### Minimal
 
+A topologia mínima (minimal) no Mininet consiste em um único switch conectado a dois hosts, formando uma rede bastante simples para testes básicos. Essa configuração é útil para verificar a conectividade entre hosts, testar regras de encaminhamento ou aprender o funcionamento de switches e Hosts em uma rede virtual. 
+
 ![alt text](image-1.png)
+
+Para criar executre ``mn --topo=minimal``
 
 ### Single
 
+A topologia single no Mininet é uma configuração básica que consiste em um único switch conectado a múltiplos hosts. Essa topologia é utilizada para criar um ambiente de rede simples, onde todos os hosts existem na mesma rede local e podem se comunicar facilmente entre si através do switch. Ela é especialmente útil para realizar testes de conectividade, experimentar regras de encaminhamento ou simular ambientes de rede básicos. A sintaxe para criar uma topologia single com n hosts no Mininet é mn --topo single,n, onde n representa o número de hosts que irão se conectar ao switch.
+
 ![alt text](image-2.png)
+
+Considere o script 03 na pasta mininet para crial-a no mininet.
 
 ### Reversed
 
+Nesta topologia a conexão dos hosts ao switch é apresentada em ordem inversa à topologia normal. Assim, o switch `s1` conecta-se aos hosts `h1`, `h2` e `h3` — cada um com suas interfaces específicas. A sintaxe do comando para criar essa topologia é `mn --topo reversed,3`, onde "reversed" indica a topologia invertida e `3` é o número de hosts. A configuração lista os nomes dos hosts, suas interfaces de conexão (`s1-ethX`) e os endereços IP atribuídos a cada um, facilitando a análise de tráfego e roteamento nessa topologia. Essa abordagem é útil para validar regras de roteamento e comunicação em uma estrutura de rede onde as conexões são realizadas de forma inversa à convencional, contribuindo para o aprendizado e testes avançados em ambientes SDN e redes virtuais.
+
 ![alt text](image-3.png)
+
+Considere o script 04 na pasta mininet para criar esta topologia.
 
 ### Linear
 
+Essa imagem ilustra a topologia linear criada no Mininet, onde uma sequência de switches e hosts estão conectados em linha. São quatro switches (`s1`, `s2`, `s3`, `s4`) conectados sequencialmente, e cada um deles estabelece uma conexão com um host (`h1`, `h2`, `h3`, `h4`, respectivamente). Essa configuração é útil para testar roteamento, propagação de mensagens ou políticas de firewall em uma rede linear, geralmente usada para simular ambientes de backbone ou topologias de rede com trânsito sequencial. O comando para criar essa topologia no Mininet é `mn --topo linear,4`, onde "linear" indica a topologia em linha e "4" é o número de switches e hosts. A configuração detalha as interfaces de conexão e os endereços IP atribuídos a cada host, além do mapeamento entre switches e hosts, permitindo uma análise precisa do fluxo de dados, além de facilitar o desenvolvimento e o teste de algoritmos de roteamento customizados.
+
 ![alt text](image-4.png)
+
+
+Na topologia apresentada, cada switch está conectado a dois hosts. Para conectar dois hosts a um mesmo switch no Mininet, você usaria o comando net.addLink() duas vezes, um para cada host, conectando ambos ao switch desejado. O comando seria algo assim:
 
 ![alt text](image-5.png)
 
+Considere o script 05 na pasta mininet para cria-la usnaod python e bibliotecas mininet.
+
 ### Tree
+
+A topologia em árvore apresenta uma estrutura hierárquica em vários níveis, onde um switch raiz conecta-se a vários switches de nível intermediário, que por sua vez se conectam aos switches finais ligados aos hosts. Essa configuração permite uma grande escalabilidade, pois novos switches podem facilmente ser adicionados em cada nível, ampliando a rede sem alterar sua estrutura fundamental. Além disso, a topologia em árvore facilita o gerenciamento e a segmentação de redes, permitindo a aplicação de políticas específicas de tráfego e segurança em diferentes camadas. Contudo, ela possui uma característica de redundância limitada, já que a maioria dos caminhos entre dois pontos pode ser único, tornando a rede suscetível a pontos de falha, como links ou switches específicos. Apesar disso, a estrutura hierárquica torna a transmissão de dados mais eficiente, reduzindo colisões e congestionamentos em redes de grande porte, tornando-se uma escolha comum para data centers e ambientes de grande escala que exigem organização, escalabilidade e desempenho.
 
 ![alt text](image-6.png)
 
+Esta segunda imagem representa uma topologia em árvore com dois níveis. O switch raiz, S1, está conectado a três switches finais (S2, S3, S4), cada um deles conectado a três hosts (h1 a h9).
+
 ![alt text](image-7.png)
+
+Utilize o comando ``mn --topo=tree,3`` para criar esta infraestrutura no mininet ou utilize o script python importando as bibliotecas mininet para isto (anexo na pasta mininet).
 
 ## Referencias
 - [Comandos mininet](https://mininet.org/walkthrough/)
